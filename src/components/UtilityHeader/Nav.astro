@@ -1,0 +1,46 @@
+---
+import { utilityNavItems } from "../../data"
+---
+
+<nav>
+  <ul>
+    {
+      utilityNavItems.map((item) => (
+        <li>
+          <a href={item.link} onclick={item.onclick}>
+            {item.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  nav {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    gap: 1em;
+    list-style: none;
+    padding: 0;
+  }
+
+  a {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: var(--link-white);
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 650px) {
+    nav {
+      display: block;
+    }
+  }
+</style>

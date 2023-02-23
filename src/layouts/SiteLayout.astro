@@ -1,0 +1,89 @@
+---
+import UtilityHeader from "../components/UtilityHeader/index.astro"
+import PrimaryHeader from "../components/PrimaryHeader/index.astro"
+import Heading from "../components/Heading.astro"
+import Subheading from "../components/Subheading.astro"
+
+const { title } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <UtilityHeader />
+      <PrimaryHeader />
+    </header>
+
+    <main>
+      <div class="container">
+        <Heading title={title} />
+        <Subheading />
+
+        <article>
+          <slot />
+        </article>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --color-engineering-orange: rgb(204, 0, 0);
+    --color-turkey-red: rgb(170, 0, 0);
+    --color-white: rgb(255, 255, 255);
+    --color-seasalt: rgb(247, 247, 247);
+    --color-jet: rgb(51, 51, 51);
+    --color-dim-gray: rgb(102, 102, 102);
+
+    /* Brand colors */
+    --brand-red: var(--color-engineering-orange);
+    --brand-red-dark: var(--color-turkey-red);
+    --brand-white: var(--color-white);
+
+    /* Text color */
+    --text-dark: var(--color-jet);
+
+    /* Background color */
+    --bg-brand: var(--brand-red);
+    --bg-white: var(--color-white);
+    --bg-smoke: var(--color-seasalt);
+
+    /* Link color */
+    --link: var(--color-dim-gray);
+    --link-hover: var(--color-jet);
+    --link-active: var(--color-jet);
+    --link-white: var(--color-white);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--text-dark);
+  }
+
+  .container {
+    padding-inline: 1em;
+  }
+</style>

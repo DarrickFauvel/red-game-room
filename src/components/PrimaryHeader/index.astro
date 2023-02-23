@@ -1,0 +1,30 @@
+---
+import Hamburger from "./Hamburger.astro"
+import Logo from "./Logo.astro"
+import MobileSearch from "./MobileSearch.astro"
+import UserUtils from "./UserUtils.astro"
+---
+
+<section>
+  <div class="container">
+    <Hamburger />
+    <Logo />
+    <UserUtils />
+    <MobileSearch />
+  </div>
+</section>
+
+<style>
+  section {
+    box-shadow: 0 2px 3px #ddd;
+    margin-bottom: 1em;
+  }
+
+  .container {
+    display: grid;
+    grid-template-areas:
+      "hamburger logo utils"
+      "search search search";
+    padding-block: 0.8em;
+  }
+</style>

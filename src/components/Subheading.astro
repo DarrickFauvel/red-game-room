@@ -1,0 +1,52 @@
+---
+const navItems = [
+  {
+    name: "Home",
+    link: "#",
+  },
+  {
+    name: "Toys",
+    link: "#",
+  },
+  {
+    name: "Games & Puzzles",
+    link: "#",
+  },
+  {
+    name: "Board Games",
+    link: "",
+  },
+]
+
+// const renderNav = () => {
+//   let result = ""
+//   navItems.forEach((item) => {
+//     if (item.link) {
+//       result += `<a href="${item.link}">${item.name}</a> / `
+//     } else {
+//       result += `${item.name}`
+//     }
+//   })
+//   return result
+// }
+---
+
+<nav>
+  {
+    navItems.map((item) => {
+      return item.link ? (
+        <span>
+          <a href={item.link}>{item.name}</a> /
+        </span>
+      ) : (
+        <span>{item.name}</span>
+      )
+    })
+  }
+</nav>
+
+<style>
+  nav {
+    text-align: center;
+  }
+</style>

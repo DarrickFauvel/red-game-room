@@ -1,0 +1,24 @@
+---
+import LocationUtility from "./LocationUtility.astro"
+import Nav from "./Nav.astro"
+---
+
+<section>
+  <div class="container">
+    <LocationUtility />
+    <Nav />
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--bg-brand);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 0.5em;
+  }
+</style>
